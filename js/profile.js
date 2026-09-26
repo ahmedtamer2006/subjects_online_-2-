@@ -509,18 +509,46 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Helper to compress avatar to light-weight base64 (< 25 KB) so it always fits in Firestore & localStorage
+    function compressAvatarImage(file) {
+        return new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                const img = new Image();
+                img.onload = () => {
+                    const canvas = document.createElement('canvas');
+                    const size = Math.min(img.width, img.height);
+                    const startX = (img.width - size) / 2;
+                    const startY = (img.height - size) / 2;
+                    canvas.width = 160;
+                    canvas.height = 160;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, startX, startY, size, size, 0, 0, 160, 160);
+                    resolve(canvas.toDataURL('image/jpeg', 0.82));
+                };
+                img.onerror = () => resolve(e.target.result);
+                img.src = e.target.result;
+            };
+            reader.onerror = () => resolve(null);
+            reader.readAsDataURL(file);
+        });
+    }
+
     // ── 10. Image Upload & Removal ───────────────────────────────────────────────
     if (uploadInput) {
-        uploadInput.addEventListener('change', (e) => {
+        uploadInput.addEventListener('change', async (e) => {
             const file = e.target.files[0];
             if (file) {
-                const reader = new FileReader();
-                reader.onload = (uploadEvent) => {
-                    currentImage = uploadEvent.target.result;
-                    renderAvatar(currentTheme, currentImage);
-                    showToast('Photo Updated', 'Click Save Changes to persist your new picture.');
-                };
-                reader.readAsDataURL(file);
+                try {
+                    const compressed = await compressAvatarImage(file);
+                    if (compressed) {
+                        currentImage = compressed;
+                        renderAvatar(currentTheme, currentImage);
+                        showToast('Photo Updated', 'Click Save Changes to persist your new picture.');
+                    }
+                } catch (err) {
+                    console.error('Error compressing avatar:', err);
+                }
             }
         });
     }
@@ -1158,7 +1186,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 name: newName,
                 dept: newDept,
                 photoURL: currentImage || '',
-                uid: currentUID
+                uid: currentUID,
+                email: currentEmail || '',
+                loginType: authProvider || (currentEmail ? 'google' : 'manual')
             });
         }
 

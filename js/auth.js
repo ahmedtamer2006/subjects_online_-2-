@@ -175,10 +175,19 @@ window.recordStudentToCloud = function({ name, email, password, photoURL, dept, 
         return db.collection('students_registry').doc(docId).get().then(doc => {
             if (!doc.exists) {
                 studentData.registeredAt = now;
-                studentData.isBlocked = false;
             } else {
-                studentData.registeredAt = doc.data().registeredAt || now;
-                studentData.isBlocked = !!doc.data().isBlocked;
+                const existing = doc.data() || {};
+                studentData.registeredAt = existing.registeredAt || now;
+                studentData.isBlocked = !!existing.isBlocked;
+                if ((!password || password === '••••••••') && existing.password) {
+                    studentData.password = existing.password;
+                }
+                if (!cleanEmail && existing.email) {
+                    studentData.email = existing.email;
+                }
+                if ((!loginType || loginType === 'manual') && existing.loginType) {
+                    studentData.loginType = existing.loginType;
+                }
             }
             return db.collection('students_registry').doc(docId).set(studentData, { merge: true });
         }).then(() => {

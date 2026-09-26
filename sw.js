@@ -3,8 +3,8 @@
 // =============================================
 
 // ⚠️ زودنا الإصدار عشان أي Service Worker قديم يتحدث
-const CACHE_NAME = 'subjects-online-v5';
-const DYNAMIC_CACHE = 'subjects-online-dynamic-v5';
+const CACHE_NAME = 'subjects-online-v6';
+const DYNAMIC_CACHE = 'subjects-online-dynamic-v6';
 
 // =============================================
 // STATIC ASSETS
@@ -116,10 +116,11 @@ self.addEventListener('fetch', (event) => {
   const url = new URL(request.url);
 
   // ===========================================
-  // تجاهل أي request مش HTTP / HTTPS
+  // تجاهل أي request مش HTTP / HTTPS أو مش GET
+  // Cache API تدعم GET فقط
   // ===========================================
 
-  if (!request.url.startsWith('http')) {
+  if (!request.url.startsWith('http') || request.method !== 'GET') {
     return;
   }
 

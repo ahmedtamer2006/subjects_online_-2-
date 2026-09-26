@@ -10,67 +10,66 @@ const MATERIALS = [
         icon: '🧮',
         color: '#dbeafe',
         accent: '#2563eb',
-        desc: 'Comprehensive study of accounting for assets, liabilities, revenue recognition, and financial statements preparation.',
         doctor: 'Dr. Mahmoud Zatout & Dr. Saeed Abu El-Reesh',
         content: {
             chapters: [
                 {
-                    num: 1, title: "Intermediate Accounting — Framework & Foundations", time: "2h 30m",
+                    num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Week 1: Accounting Environment & Standards", lectures: [] },
-                        { num: 2, title: "Week 2: Balance Sheet & Income Statement", lectures: [] },
-                        { num: 3, title: "Week 3: Revenue Recognition", lectures: [] }
+                        { num: 1, title: "Week 1: ", lectures: [] },
+                        { num: 2, title: "Week 2: ", lectures: [] },
+                        { num: 3, title: "Week 3: ", lectures: [] }
                     ]
                 },
                 {
-                    num: 2, title: "Intermediate Accounting — Assets & Valuation", time: "3h 00m",
+                    num: 2, title: "", time: "3h 00m",
                     weeks: [
-                        { num: 1, title: "Week 4: Inventories & Valuation Models", lectures: [] },
-                        { num: 2, title: "Week 5: Property, Plant & Equipment", lectures: [] }
+                        { num: 1, title: "Week 4: ", lectures: [] },
+                        { num: 2, title: "Week 5: ", lectures: [] }
                     ]
                 }
             ],
             quizzes: [
                 {
-                    num: 1, title: "Quizzes — Accounting Practice Sets", time: "45m",
+                    num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Quiz Set 1: Basic Accounting Principles", lectures: [] },
-                        { num: 2, title: "Quiz Set 2: Financial Reporting Cases", lectures: [] }
+                        { num: 1, title: "", lectures: [] },
+                        { num: 2, title: "", lectures: [] }
                     ]
                 }
             ],
             sections: [
                 {
-                    num: 1, title: "Practical Accounting Sections", time: "1h 30m",
+                    num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Section 1: Practical Exercises & Journal Entries", lectures: [] },
-                        { num: 2, title: "Section 2: Ledger Accounts & Balance Sheets", lectures: [] }
+                        { num: 1, title: "", lectures: [] },
+                        { num: 2, title: "", lectures: [] }
                     ]
                 }
             ],
             summaries: [
                 {
-                    num: 1, title: "Summaries — Core Accounting Essentials", time: "1h 00m",
+                    num: 1, title: "", time: "1h 00m",
                     weeks: [
-                        { num: 1, title: "Summary 1: Accounting Cycle & Key Standards", lectures: [] },
-                        { num: 2, title: "Summary 2: Valuation Principles", lectures: [] }
+                        { num: 1, title: "", lectures: [] },
+                        { num: 2, title: "", lectures: [] }
                     ]
                 }
             ],
             qa: [
                 {
-                    num: 1, title: "Questions & Answers — Accounting Bank", time: "1h 00m",
+                    num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Q&A 1: Concept Explanations & MCQs", lectures: [] },
-                        { num: 2, title: "Q&A 2: Comprehensive Problem Solutions", lectures: [] }
+                        { num: 1, title: "", lectures: [] },
+                        { num: 2, title: "", lectures: [] }
                     ]
                 }
             ],
             finalReview: [
                 {
-                    num: 1, title: "Final Comprehensive Accounting Review", time: "2h 30m",
+                    num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Mock Exam & Final Problem Walkthroughs", lectures: [] }
+                        { num: 1, title: "", lectures: [] }
                     ]
                 }
             ]
@@ -82,8 +81,7 @@ const MATERIALS = [
         icon: '📊',
         color: '#ede9fe',
         accent: '#7c3aed',
-        desc: 'Data presentation, frequency distributions, central tendency, dispersion, probability concepts, and statistical analysis.',
-        doctor: 'Prof. Dr. Mona El-Baily & Dr. Hany Khedr',
+        doctor: ' Dr. Mona El-Baily & Dr. Hany Khedr',
         content: {
             chapters: [
                 {

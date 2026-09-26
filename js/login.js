@@ -87,6 +87,12 @@ function setupFormValidation() {
 
     // ── Real Firebase Google Sign-In ──────────────────────────────────────────
     googleBtn.addEventListener('click', async () => {
+        // Check if running directly from local file protocol (file://)
+        if (window.location.protocol === 'file:') {
+            showAuthError('⚠️ Google Sign-In لا يعمل عند فتح الملف مباشرة (file://). يرجى تشغيل الموقع عبر سيرفر محلي (Live Server) أو تسجيل الدخول بالاسم وكلمة المرور بالأسفل.');
+            return;
+        }
+
         // Disable button and show loading state while popup opens
         googleBtn.disabled = true;
         googleBtn.style.opacity = '0.7';
@@ -146,19 +152,28 @@ function setupFormValidation() {
                     <path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/>
                     <path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/>
                 </svg>
-                Sign in with Google
+                Continue with Google
             `;
 
-            // Show a user-friendly error message
+            // Show a user-friendly and diagnostic error message
             let msg = 'Sign-in failed. Please try again.';
             if (err.code === 'auth/popup-closed-by-user') {
-                msg = 'You closed the sign-in window. Please try again.';
+                msg = 'تم إغلاق نافذة تسجيل الدخول. يرجى المحاولة مرة أخرى.';
             } else if (err.code === 'auth/network-request-failed') {
-                msg = 'Network error. Please check your internet connection.';
+                msg = 'فشل الاتصال بالإنترنت. يرجى التحقق من الشبكة.';
             } else if (err.code === 'auth/popup-blocked') {
-                msg = 'Popup was blocked by your browser. Please allow popups and try again.';
+                msg = 'المتصفح حظر النافذة المنبثقة (Popup). يرجى السماح بالنوافذ المنبثقة.';
+            } else if (err.code === 'auth/operation-not-allowed') {
+                msg = '⚠️ تسجيل الدخول بـ Google غير مفعّل في Firebase Console لهذا المشروع. يرجى تفعيله من (Authentication > Sign-in method > Google).';
+            } else if (err.code === 'auth/unauthorized-domain') {
+                const host = window.location.hostname || 'هذا النطاق';
+                msg = `⚠️ النطاق (${host}) غير مصرح به في Firebase Console. أضفه من (Authentication > Settings > Authorized domains).`;
+            } else if (err.code === 'auth/cancelled-popup-request') {
+                msg = 'تم إلغاء الطلب السابق.';
             } else if (err.code === 'auth/configuration-not-found' || err.message?.includes('YOUR_')) {
-                msg = '⚠️ Firebase not configured yet. Please add your project credentials to js/firebase-config.js';
+                msg = '⚠️ بيانات Firebase غير مكتملة في js/firebase-config.js';
+            } else if (err.message) {
+                msg = `فشل تسجيل الدخول: ${err.message} (${err.code || 'خطأ غير معروف'})`;
             }
 
             // Show a toast notification below the button
@@ -330,9 +345,9 @@ function showAuthError(message) {
         toast.style.transform = 'translateY(0)';
     });
 
-    // Auto-remove after 6 s
+    // Auto-remove after 8 s
     setTimeout(() => {
         toast.style.opacity = '0';
         setTimeout(() => toast.remove(), 300);
-    }, 6000);
+    }, 8000);
 }

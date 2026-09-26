@@ -4,7 +4,7 @@
    =================================================== */
 
 const firebaseConfig = {
-    apiKey:            "AIzaSyAEwowOnTVl5GMwvV3RkBtqyBjQ22wWd9Q",
+    apiKey:            "AIzaSyAEwowOnTVl5GMwvV3RkBtqyBJq22wWd9Q",
     authDomain:        "subjects-online-2nd.firebaseapp.com",
     databaseURL:       "https://subjects-online-2nd-default-rtdb.firebaseio.com",
     projectId:         "subjects-online-2nd",
