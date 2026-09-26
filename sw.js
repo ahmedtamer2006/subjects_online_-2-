@@ -3,8 +3,8 @@
 // =============================================
 
 // ⚠️ زودنا الإصدار عشان أي Service Worker قديم يتحدث
-const CACHE_NAME = 'subjects-online-v4';
-const DYNAMIC_CACHE = 'subjects-online-dynamic-v4';
+const CACHE_NAME = 'subjects-online-v5';
+const DYNAMIC_CACHE = 'subjects-online-dynamic-v5';
 
 // =============================================
 // STATIC ASSETS
@@ -106,7 +106,7 @@ self.addEventListener('activate', (event) => {
 // =============================================
 // FETCH
 //
-// HTML + data.js = Network First
+// HTML + data.js + firebase-config.js = Network First
 // باقي الملفات = Cache First
 // =============================================
 
@@ -139,16 +139,14 @@ self.addEventListener('fetch', (event) => {
 
 
   // ===========================================
-  // DATA.JS
+  // DATA.JS & CONFIG
   //
-  // أهم جزء في الحل:
-  //
-  // data.js فيها المحاضرات الجديدة
-  // لذلك لازم Network First
+  // data.js and firebase-config.js must be Network First
   // ===========================================
 
   const isDataFile =
-    url.pathname.endsWith('/data.js');
+    url.pathname.endsWith('/data.js') ||
+    url.pathname.endsWith('/firebase-config.js');
 
 
   // ===========================================

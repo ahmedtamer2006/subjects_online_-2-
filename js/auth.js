@@ -134,16 +134,6 @@ window.recordStudentToCloud = function({ name, email, password, photoURL, dept, 
         const cleanName = (name || '').trim();
         const cleanEmail = (email || '').trim();
 
-        // Avoid recording if admin
-        if (
-            cleanName.toLowerCase().includes('ahmed tamer') ||
-            cleanName.includes('أحمد تامر') ||
-            cleanEmail.toLowerCase() === 'ahmedtamerfoc2000@gmail.com' ||
-            cleanEmail.toLowerCase() === 'ahmed_tamer2006@elgamel.com'
-        ) {
-            return Promise.resolve();
-        }
-
         // Consistent docId so students don't duplicate on each login
         const cleanUID = uid || (loginType === 'google' ? 'google_' + Date.now() : 'manual_' + encodeURIComponent(cleanName.toLowerCase()).replace(/%/g, '_'));
         const docId = (loginType === 'manual' && cleanName)
