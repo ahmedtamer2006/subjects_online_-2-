@@ -22,7 +22,7 @@ const MATERIALS = [
                     ]
                 },
                 {
-                    num: 2, title: "", time: "3h 00m",
+                    num: 2, title: "", time: "",
                     weeks: [
                         { num: 1, title: "Week 4: ", lectures: [] },
                         { num: 2, title: "Week 5: ", lectures: [] }
@@ -49,7 +49,7 @@ const MATERIALS = [
             ],
             summaries: [
                 {
-                    num: 1, title: "", time: "1h 00m",
+                    num: 1, title: "", time: "",
                     weeks: [
                         { num: 1, title: "", lectures: [] },
                         { num: 2, title: "", lectures: [] }
@@ -85,62 +85,62 @@ const MATERIALS = [
         content: {
             chapters: [
                 {
-                    num: 1, title: "Descriptive Statistics — Data Collection & Tables", time: "2h 15m",
+                    num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Week 1: Introduction to Statistical Variables", lectures: [] },
-                        { num: 2, title: "Week 2: Frequency Distributions & Graphical Charts", lectures: [] },
-                        { num: 3, title: "Week 3: Central Tendency Measures", lectures: [] }
+                        { num: 1, title: "", lectures: [] },
+                        { num: 2, title: "", lectures: [] },
+                        { num: 3, title: "", lectures: [] }
                     ]
                 },
-                {
-                    num: 2, title: "Descriptive Statistics — Dispersion & Probability", time: "2h 45m",
-                    weeks: [
-                        { num: 1, title: "Week 4: Dispersion, Variance & Standard Deviation", lectures: [] },
-                        { num: 2, title: "Week 5: Correlation & Regression Basics", lectures: [] }
-                    ]
-                }
+                // {
+                //     num: 2, title: "Descriptive Statistics — Dispersion & Probability", time: "2h 45m",
+                //     weeks: [
+                //         { num: 1, title: "Week 4: Dispersion, Variance & Standard Deviation", lectures: [] },
+                //         { num: 2, title: "Week 5: Correlation & Regression Basics", lectures: [] }
+                //     ]
+                // }
             ],
             quizzes: [
                 {
-                    num: 1, title: "Quizzes — Statistics Practice Sets", time: "40m",
+                    num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Quiz Set 1: Central Tendency Calculations", lectures: [] },
-                        { num: 2, title: "Quiz Set 2: Measures of Dispersion", lectures: [] }
+                        { num: 1, title: "", lectures: [] },
+                        { num: 2, title: "", lectures: [] }
                     ]
                 }
             ],
             sections: [
                 {
-                    num: 1, title: "Practical Statistics Sections", time: "1h 30m",
+                    num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Section 1: Data Calculation Worksheets", lectures: [] },
-                        { num: 2, title: "Section 2: Applied Statistical Problems", lectures: [] }
+                        { num: 1, title: "", lectures: [] },
+                        { num: 2, title: "", lectures: [] }
                     ]
                 }
             ],
             summaries: [
                 {
-                    num: 1, title: "Summaries — Statistical Laws & Formulas", time: "45m",
+                    num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Summary 1: Key Formulas & Laws", lectures: [] },
-                        { num: 2, title: "Summary 2: Interpretations & Examples", lectures: [] }
+                        { num: 1, title: "", lectures: [] },
+                        { num: 2, title: "", lectures: [] }
                     ]
                 }
             ],
             qa: [
                 {
-                    num: 1, title: "Questions & Answers — Statistics Bank", time: "1h 00m",
+                    num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Q&A 1: Concept MCQs & Problem Sets", lectures: [] },
-                        { num: 2, title: "Q&A 2: Solved Midterm & Term Questions", lectures: [] }
+                        { num: 1, title: "", lectures: [] },
+                        { num: 2, title: "", lectures: [] }
                     ]
                 }
             ],
             finalReview: [
                 {
-                    num: 1, title: "Final Comprehensive Statistics Review", time: "2h 30m",
+                    num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Complete Course Revision & Model Exam", lectures: [] }
+                        { num: 1, title: "", lectures: [] }
                     ]
                 }
             ]
@@ -152,67 +152,66 @@ const MATERIALS = [
         icon: '💰',
         color: '#fef9c3',
         accent: '#ca8a04',
-        desc: 'Principles of public expenditures, government revenue sources, state budgeting, and fiscal economic policy.',
         doctor: 'Dr. Samir Marie & Dr. Ahmed Saeed',
         content: {
             chapters: [
                 {
-                    num: 1, title: "Public Finance — Role of Government & Expenditures", time: "2h 20m",
+                    num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Week 1: Foundations of Public Finance", lectures: [] },
-                        { num: 2, title: "Week 2: Public Expenditure Categories & Growth", lectures: [] },
-                        { num: 3, title: "Week 3: Economic Effects of Public Spending", lectures: [] }
+                        { num: 1, title: "Week 1:", lectures: [] },
+                        { num: 2, title: "Week 2: ", lectures: [] },
+                        { num: 3, title: "Week 3: ", lectures: [] }
                     ]
                 },
-                {
-                    num: 2, title: "Public Finance — Public Revenues & Budget", time: "2h 45m",
-                    weeks: [
-                        { num: 1, title: "Week 4: Taxes, Fees & Sovereign Revenues", lectures: [] },
-                        { num: 2, title: "Week 5: General State Budget & Fiscal Balance", lectures: [] }
-                    ]
-                }
+                // {
+                //     num: 2, title: "Public Finance — Public Revenues & Budget", time: "2h 45m",
+                //     weeks: [
+                //         { num: 1, title: "Week 4: Taxes, Fees & Sovereign Revenues", lectures: [] },
+                //         { num: 2, title: "Week 5: General State Budget & Fiscal Balance", lectures: [] }
+                //     ]
+                // }
             ],
             quizzes: [
                 {
-                    num: 1, title: "Quizzes — Public Finance Sets", time: "40m",
+                    num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Quiz Set 1: Public Spending & Budgeting", lectures: [] },
-                        { num: 2, title: "Quiz Set 2: Tax Systems & Sovereign Revenues", lectures: [] }
+                        { num: 1, title: "", lectures: [] },
+                        { num: 2, title: "", lectures: [] }
                     ]
                 }
             ],
             sections: [
                 {
-                    num: 1, title: "Practical Public Finance Sections", time: "1h 15m",
+                    num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Section 1: Budget Structure Case Studies", lectures: [] },
-                        { num: 2, title: "Section 2: Tax & Spending Analyses", lectures: [] }
+                        { num: 1, title: "", lectures: [] },
+                        { num: 2, title: "", lectures: [] }
                     ]
                 }
             ],
             summaries: [
                 {
-                    num: 1, title: "Summaries — Fiscal Policy & Public Finance", time: "50m",
+                    num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Summary 1: Core Principles of Public Expenditures", lectures: [] },
-                        { num: 2, title: "Summary 2: Revenue Systems & Budget Rules", lectures: [] }
+                        { num: 1, title: "", lectures: [] },
+                        { num: 2, title: "", lectures: [] }
                     ]
                 }
             ],
             qa: [
                 {
-                    num: 1, title: "Questions & Answers — Public Finance Bank", time: "1h 00m",
+                    num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Q&A 1: Theoretical Concepts & Analysis", lectures: [] },
-                        { num: 2, title: "Q&A 2: Essay & Objective Questions", lectures: [] }
+                        { num: 1, title: "", lectures: [] },
+                        { num: 2, title: "", lectures: [] }
                     ]
                 }
             ],
             finalReview: [
                 {
-                    num: 1, title: "Final Comprehensive Public Finance Review", time: "2h 15m",
+                    num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Final Exam Preparation & Comprehensive Revision", lectures: [] }
+                        { num: 1, title: "", lectures: [] }
                     ]
                 }
             ]
@@ -224,67 +223,66 @@ const MATERIALS = [
         icon: '🏭',
         color: '#dcfce7',
         accent: '#16a34a',
-        desc: 'Operations design, production planning, capacity management, quality control, and manufacturing systems.',
         doctor: 'Dr. Heba Mostafa & Dr. Aya Rabie',
         content: {
             chapters: [
                 {
-                    num: 1, title: "Production Management — Operations & Plant Layout", time: "2h 15m",
+                    num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Week 1: Nature of Operations & Production", lectures: [] },
-                        { num: 2, title: "Week 2: Product Design & Process Selection", lectures: [] },
-                        { num: 3, title: "Week 3: Facility Location & Layout Planning", lectures: [] }
+                        { num: 1, title: "", lectures: [] },
+                        { num: 2, title: "Week 2:", lectures: [] },
+                        { num: 3, title: "Week 3: ", lectures: [] }
                     ]
                 },
                 {
-                    num: 2, title: "Production Management — Planning & Quality Control", time: "2h 50m",
+                    num: 2, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Week 4: Aggregate Planning & Scheduling", lectures: [] },
-                        { num: 2, title: "Week 5: Total Quality Management & Inventory", lectures: [] }
+                        { num: 1, title: "Week 4: ", lectures: [] },
+                        { num: 2, title: "Week 5: ", lectures: [] }
                     ]
                 }
             ],
             quizzes: [
                 {
-                    num: 1, title: "Quizzes — Production & Operations", time: "40m",
+                    num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Quiz Set 1: Facility Design & Layout", lectures: [] },
-                        { num: 2, title: "Quiz Set 2: Production Scheduling & Quality", lectures: [] }
+                        { num: 1, title: " ", lectures: [] },
+                        { num: 2, title: "", lectures: [] }
                     ]
                 }
             ],
             sections: [
                 {
-                    num: 1, title: "Practical Operations Sections", time: "1h 20m",
+                    num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Section 1: Capacity & Location Calculations", lectures: [] },
-                        { num: 2, title: "Section 2: Inventory & Control Models", lectures: [] }
+                        { num: 1, title: "", lectures: [] },
+                        { num: 2, title: "", lectures: [] }
                     ]
                 }
             ],
             summaries: [
                 {
-                    num: 1, title: "Summaries — Operations & Production Essentials", time: "45m",
+                    num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Summary 1: Process Types & Facility Layout", lectures: [] },
-                        { num: 2, title: "Summary 2: Quality & Supply Control", lectures: [] }
+                        { num: 1, title: "", lectures: [] },
+                        { num: 2, title: "", lectures: [] }
                     ]
                 }
             ],
             qa: [
                 {
-                    num: 1, title: "Questions & Answers — Operations Bank", time: "1h 00m",
+                    num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Q&A 1: Concept MCQs & Practical Exercises", lectures: [] },
-                        { num: 2, title: "Q&A 2: Production Case Scenarios", lectures: [] }
+                        { num: 1, title: "", lectures: [] },
+                        { num: 2, title: "", lectures: [] }
                     ]
                 }
             ],
             finalReview: [
                 {
-                    num: 1, title: "Final Comprehensive Production Review", time: "2h 15m",
+                    num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Final Exam Preparation & Problem Worksheets", lectures: [] }
+                        { num: 1, title: "", lectures: [] }
                     ]
                 }
             ]
@@ -296,67 +294,66 @@ const MATERIALS = [
         icon: '📈',
         color: '#fee2e2',
         accent: '#dc2626',
-        desc: 'National income accounts, aggregate demand & supply, monetary economics, inflation, unemployment, and macroeconomic policies.',
         doctor: 'Dr. El-Sayeda Kamal & Dr. Hanan Abdel-Khaleq',
         content: {
             chapters: [
                 {
-                    num: 1, title: "Macroeconomic Theory — National Income & Aggregates", time: "2h 30m",
+                    num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Week 1: Introduction to Macroeconomic Aggregates", lectures: [] },
-                        { num: 2, title: "Week 2: Measuring Gross Domestic Product (GDP)", lectures: [] },
-                        { num: 3, title: "Week 3: Consumption, Savings & Investment", lectures: [] }
+                        { num: 1, title: "Week 1:", lectures: [] },
+                        { num: 2, title: "Week 2: ", lectures: [] },
+                        { num: 3, title: "Week 3: ", lectures: [] }
                     ]
                 },
                 {
-                    num: 2, title: "Macroeconomic Theory — Equilibrium & Policies", time: "3h 00m",
+                    num: 2, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Week 4: Equilibrium National Income & Multipliers", lectures: [] },
-                        { num: 2, title: "Week 5: Inflation, Unemployment & Economic Policy", lectures: [] }
+                        { num: 1, title: "Week 4: ", lectures: [] },
+                        { num: 2, title: "Week 5: ", lectures: [] }
                     ]
                 }
             ],
             quizzes: [
                 {
-                    num: 1, title: "Quizzes — Macroeconomics Sets", time: "45m",
+                    num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Quiz Set 1: GDP & National Income Accounts", lectures: [] },
-                        { num: 2, title: "Quiz Set 2: Equilibrium & Multiplier Analysis", lectures: [] }
+                        { num: 1, title: "", lectures: [] },
+                        { num: 2, title: "", lectures: [] }
                     ]
                 }
             ],
             sections: [
                 {
-                    num: 1, title: "Practical Macroeconomics Sections", time: "1h 30m",
+                    num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Section 1: GDP Measurement Problems", lectures: [] },
-                        { num: 2, title: "Section 2: Equilibrium & Policy Models", lectures: [] }
+                        { num: 1, title: "", lectures: [] },
+                        { num: 2, title: "", lectures: [] }
                     ]
                 }
             ],
             summaries: [
                 {
-                    num: 1, title: "Summaries — Macroeconomic Framework", time: "50m",
+                    num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Summary 1: National Accounts & Aggregates", lectures: [] },
-                        { num: 2, title: "Summary 2: Policy Instruments & Equilibrium", lectures: [] }
+                        { num: 1, title: "", lectures: [] },
+                        { num: 2, title: "", lectures: [] }
                     ]
                 }
             ],
             qa: [
                 {
-                    num: 1, title: "Questions & Answers — Macroeconomics Bank", time: "1h 00m",
+                    num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Q&A 1: Conceptual Explanations & MCQs", lectures: [] },
-                        { num: 2, title: "Q&A 2: Economic Modeling & Solved Exercises", lectures: [] }
+                        { num: 1, title: "", lectures: [] },
+                        { num: 2, title: "", lectures: [] }
                     ]
                 }
             ],
             finalReview: [
                 {
-                    num: 1, title: "Final Comprehensive Macroeconomics Review", time: "2h 30m",
+                    num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Final Revision Deck & Exam Simulation", lectures: [] }
+                        { num: 1, title: "", lectures: [] }
                     ]
                 }
             ]
@@ -368,67 +365,66 @@ const MATERIALS = [
         icon: '🌐',
         color: '#cffafe',
         accent: '#0891b2',
-        desc: 'Advanced business English terminology, professional reading comprehension, technical translation, and correspondence.',
         doctor: 'Dr. Samir Marie, Dr. Mohamed Zaeer & Dr. Walaa Nabil',
         content: {
             chapters: [
                 {
-                    num: 1, title: "Business English — Terminology & Reading Comprehension", time: "2h 00m",
+                    num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Week 1: Core Commerce & Financial Terminology", lectures: [] },
-                        { num: 2, title: "Week 2: Business Texts & Reading Skills", lectures: [] },
-                        { num: 3, title: "Week 3: Management Vocabulary & Context", lectures: [] }
+                        { num: 1, title: "Week 1:", lectures: [] },
+                        { num: 2, title: "Week 2:", lectures: [] },
+                        { num: 3, title: "Week 3:", lectures: [] }
                     ]
                 },
-                {
-                    num: 2, title: "Business English — Translation & Communication", time: "2h 15m",
-                    weeks: [
-                        { num: 1, title: "Week 4: Economic Translation Techniques", lectures: [] },
-                        { num: 2, title: "Week 5: Business Correspondence & Reports", lectures: [] }
-                    ]
-                }
+                // {
+                //     num: 2, title: "Business English — Translation & Communication", time: "2h 15m",
+                //     weeks: [
+                //         { num: 1, title: "Week 4: Economic Translation Techniques", lectures: [] },
+                //         { num: 2, title: "Week 5: Business Correspondence & Reports", lectures: [] }
+                //     ]
+                // }
             ],
             quizzes: [
                 {
-                    num: 1, title: "Quizzes — Business English Sets", time: "35m",
+                    num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Quiz Set 1: Commerce Vocabulary & Terms", lectures: [] },
-                        { num: 2, title: "Quiz Set 2: Translation & Grammar Exercises", lectures: [] }
+                        { num: 1, title: "", lectures: [] },
+                        { num: 2, title: "", lectures: [] }
                     ]
                 }
             ],
             sections: [
                 {
-                    num: 1, title: "Practical Language Sections", time: "1h 15m",
+                    num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Section 1: Vocabulary Exercises & Practice", lectures: [] },
-                        { num: 2, title: "Section 2: Paragraph Translation Drills", lectures: [] }
+                        { num: 1, title: "ercises & Practice", lectures: [] },
+                        { num: 2, title: "slation Drills", lectures: [] }
                     ]
                 }
             ],
             summaries: [
                 {
-                    num: 1, title: "Summaries — English Glossary & Key Terms", time: "45m",
+                    num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Summary 1: Essential Business Glossary", lectures: [] },
-                        { num: 2, title: "Summary 2: Grammar & Writing Guides", lectures: [] }
+                        { num: 1, title: "", lectures: [] },
+                        { num: 2, title: "", lectures: [] }
                     ]
                 }
             ],
             qa: [
                 {
-                    num: 1, title: "Questions & Answers — English Bank", time: "50m",
+                    num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Q&A 1: Vocabulary MCQs & Synonyms", lectures: [] },
-                        { num: 2, title: "Q&A 2: Translation Passages & Answers", lectures: [] }
+                        { num: 1, title: "", lectures: [] },
+                        { num: 2, title: "", lectures: [] }
                     ]
                 }
             ],
             finalReview: [
                 {
-                    num: 1, title: "Final Comprehensive English Review", time: "2h 00m",
+                    num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Final Exam Preparation & Complete Revision", lectures: [] }
+                        { num: 1, title: "", lectures: [] }
                     ]
                 }
             ]
@@ -440,67 +436,66 @@ const MATERIALS = [
         icon: '💻',
         color: '#fce7f3',
         accent: '#db2777',
-        desc: 'Information technology in organizations, database systems, e-business architecture, and managerial decision support.',
         doctor: 'Dr. Heba Mostafa & Dr. Samar El-Tanbouly',
         content: {
             chapters: [
                 {
-                    num: 1, title: "MIS — Foundations & Enterprise Systems", time: "2h 20m",
+                    num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Week 1: Information Systems in Global Business", lectures: [] },
-                        { num: 2, title: "Week 2: Strategic Information Systems & Competitive Advantage", lectures: [] },
-                        { num: 3, title: "Week 3: IT Infrastructure & Database Management", lectures: [] }
+                        { num: 1, title: "", lectures: [] },
+                        { num: 2, title: "", lectures: [] },
+                        { num: 3, title: "", lectures: [] }
                     ]
                 },
-                {
-                    num: 2, title: "MIS — E-Business & Decision Support", time: "2h 45m",
-                    weeks: [
-                        { num: 1, title: "Week 4: Enterprise Applications & E-Commerce", lectures: [] },
-                        { num: 2, title: "Week 5: Decision Support Systems & Business Intelligence", lectures: [] }
-                    ]
-                }
+                // {
+                //     num: 2, title: "", time: "",
+                //     weeks: [
+                //         { num: 1, title: "Week 4: Enterprise Applications & E-Commerce", lectures: [] },
+                //         { num: 2, title: "Week 5: Decision Support Systems & Business Intelligence", lectures: [] }
+                //     ]
+                // }
             ],
             quizzes: [
                 {
-                    num: 1, title: "Quizzes — MIS Practice Sets", time: "40m",
+                    num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Quiz Set 1: IT Infrastructure & Concepts", lectures: [] },
-                        { num: 2, title: "Quiz Set 2: Enterprise Systems & Decision Models", lectures: [] }
+                        { num: 1, title: "", lectures: [] },
+                        { num: 2, title: "", lectures: [] }
                     ]
                 }
             ],
             sections: [
                 {
-                    num: 1, title: "Practical MIS Sections", time: "1h 15m",
+                    num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Section 1: System Flowcharts & Database Cases", lectures: [] },
-                        { num: 2, title: "Section 2: Enterprise Systems Applied Scenarios", lectures: [] }
+                        { num: 1, title: "", lectures: [] },
+                        { num: 2, title: "", lectures: [] }
                     ]
                 }
             ],
             summaries: [
                 {
-                    num: 1, title: "Summaries — MIS Key Concepts", time: "45m",
+                    num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Summary 1: Systems Architecture & Types", lectures: [] },
-                        { num: 2, title: "Summary 2: Digital Strategy & Security", lectures: [] }
+                        { num: 1, title: "", lectures: [] },
+                        { num: 2, title: "", lectures: [] }
                     ]
                 }
             ],
             qa: [
                 {
-                    num: 1, title: "Questions & Answers — MIS Bank", time: "1h 00m",
+                    num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Q&A 1: Concept MCQs & True/False Sets", lectures: [] },
-                        { num: 2, title: "Q&A 2: System Architecture Case Questions", lectures: [] }
+                        { num: 1, title: "", lectures: [] },
+                        { num: 2, title: "", lectures: [] }
                     ]
                 }
             ],
             finalReview: [
                 {
-                    num: 1, title: "Final Comprehensive MIS Review", time: "2h 15m",
+                    num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Final Exam Preparation & Comprehensive Revision", lectures: [] }
+                        { num: 1, title: "", lectures: [] }
                     ]
                 }
             ]
