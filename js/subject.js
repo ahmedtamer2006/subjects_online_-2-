@@ -4,16 +4,22 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     const params    = new URLSearchParams(window.location.search);
-    const subjectId = params.get('id') || 'a1';
+    const subjectId = params.get('id') || 's1';
 
     // ── Find subject ─────────────────────────────────────
-    let subject = null, deptLabel = '';
-    for (const [key, items] of Object.entries(MATERIALS)) {
-        const found = items.find(i => i.id === subjectId);
-        if (found) {
-            subject   = found;
-            deptLabel = key.charAt(0).toUpperCase() + key.slice(1);
-            break;
+    let subject = null, deptLabel = '2nd Year';
+    if (Array.isArray(MATERIALS)) {
+        subject = MATERIALS.find(i => i.id === subjectId) || MATERIALS[0];
+    } else {
+        for (const [key, items] of Object.entries(MATERIALS)) {
+            if (Array.isArray(items)) {
+                const found = items.find(i => i.id === subjectId);
+                if (found) {
+                    subject   = found;
+                    deptLabel = key.charAt(0).toUpperCase() + key.slice(1);
+                    break;
+                }
+            }
         }
     }
     if (!subject) { document.getElementById('subj-title').textContent = 'Subject not found'; return; }

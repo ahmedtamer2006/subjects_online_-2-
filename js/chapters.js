@@ -14,11 +14,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const THEME_ACCENT = '#0ea5e9';
     const THEME_GLOW = '#7dd3fc';
 
-    // Find subject across all departments
+    // Find subject
     let subject = null;
-    for (const dept in MATERIALS) {
-        const found = MATERIALS[dept].find(m => m.id === subjectId);
-        if (found) { subject = found; break; }
+    if (Array.isArray(MATERIALS)) {
+        subject = MATERIALS.find(m => m.id === subjectId) || MATERIALS[0];
+    } else {
+        for (const dept in MATERIALS) {
+            if (Array.isArray(MATERIALS[dept])) {
+                const found = MATERIALS[dept].find(m => m.id === subjectId);
+                if (found) { subject = found; break; }
+            }
+        }
     }
 
     if (!subject) {
@@ -196,6 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 700);
         }
         localStorage.setItem('so_offline_library', JSON.stringify(offlineLib));
+        window.dispatchEvent(new CustomEvent('so-lib-changed', { detail: offlineLib }));
     };
 
 

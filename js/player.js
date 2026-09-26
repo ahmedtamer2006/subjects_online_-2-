@@ -29,11 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const cand = params.get('id');
         let isSubject = false;
         if (typeof MATERIALS !== 'undefined') {
-            for (const d in MATERIALS) {
-                if (MATERIALS[d].some(m => m.id === cand)) {
-                    isSubject = true;
-                    break;
-                }
+            const catalog = Array.isArray(MATERIALS) ? MATERIALS : Object.values(MATERIALS).flat();
+            if (catalog.some(m => m && m.id === cand)) {
+                isSubject = true;
             }
         }
         if (isSubject) {
@@ -48,32 +46,27 @@ document.addEventListener('DOMContentLoaded', () => {
     // ---------------------------------------------------------
     let currentSubject = null;
     if (typeof MATERIALS !== 'undefined') {
+        const catalog = Array.isArray(MATERIALS) ? MATERIALS : Object.values(MATERIALS).flat();
         if (subjectId) {
-            for (const dept in MATERIALS) {
-                const found = MATERIALS[dept].find(m => m.id === subjectId);
-                if (found) { currentSubject = found; break; }
-            }
+            currentSubject = catalog.find(m => m && m.id === subjectId);
         }
 
         // Auto-detect subject if subjectId was missing or invalid
         if (!currentSubject) {
-            for (const dept in MATERIALS) {
-                for (const subj of MATERIALS[dept]) {
-                    if (!subj.content) continue;
-                    for (const sKey in subj.content) {
-                        const chaps = subj.content[sKey] || [];
-                        for (const ch of chaps) {
-                            const weeks = (ch.weeks && ch.weeks.length > 0) ? ch.weeks : [{ lectures: ch.lectures || [] }];
-                            for (const w of weeks) {
-                                for (const l of (w.lectures || [])) {
-                                    if ((url && l.url === url) || (lecId && String(l.id) === String(lecId))) {
-                                        currentSubject = subj;
-                                        subjectId = subj.id;
-                                        if (!lecId) lecId = l.id;
-                                        break;
-                                    }
+            for (const subj of catalog) {
+                if (!subj || !subj.content) continue;
+                for (const sKey in subj.content) {
+                    const chaps = subj.content[sKey] || [];
+                    for (const ch of chaps) {
+                        const weeks = (ch.weeks && ch.weeks.length > 0) ? ch.weeks : [{ lectures: ch.lectures || [] }];
+                        for (const w of weeks) {
+                            for (const l of (w.lectures || [])) {
+                                if ((url && l.url === url) || (lecId && String(l.id) === String(lecId))) {
+                                    currentSubject = subj;
+                                    subjectId = subj.id;
+                                    if (!lecId) lecId = l.id;
+                                    break;
                                 }
-                                if (currentSubject) break;
                             }
                             if (currentSubject) break;
                         }

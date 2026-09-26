@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ── 3. Load State from LocalStorage ──────────────────────────────────────────
     let currentName     = localStorage.getItem('subjectsOnlineName') || '';
-    let currentDept     = localStorage.getItem('subjectsOnlineDept') || 'Accounting';
+    let currentDept     = localStorage.getItem('subjectsOnlineDept') || '2nd Year';
     let currentTheme    = localStorage.getItem('subjectsOnlineAvatarTheme') || 'blue';
     let currentImage    = localStorage.getItem('subjectsOnlineAvatarImage') || null;
     let currentEmail    = localStorage.getItem('subjectsOnlineEmail') || '';
@@ -259,8 +259,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ── 8. Initial Page Render ───────────────────────────────────────────────────
     if (displayName) displayName.textContent = currentName || 'Student';
-    if (displayDept) displayDept.textContent = currentDept || 'Accounting';
-    if (deptHubTitle) deptHubTitle.textContent = `Official channels for ${currentDept || 'Accounting'}`;
+    if (displayDept) displayDept.textContent = '2nd Year';
+    if (deptHubTitle) deptHubTitle.textContent = 'Official channels for 2nd Year';
 
     renderAvatar(currentTheme, currentImage);
     renderAccountStatus();
@@ -394,6 +394,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const instructorSubjectsList = document.getElementById('instructor-subjects-list');
 
     const defaultDoctorsMap = {
+        'Intermediate Accounting (1)': ['Dr. Mahmoud Zatout', 'Dr. Saeed Abu El-Reesh'],
+        'Descriptive Statistics': ['Prof. Dr. Mona El-Baily', 'Dr. Hany Khedr'],
+        'Public Finance (1)': ['Dr. Samir Marie', 'Dr. Ahmed Saeed'],
+        'Production Management': ['Dr. Heba Mostafa', 'Dr. Aya Rabie'],
+        'Macroeconomic Theory': ['Dr. El-Sayeda Kamal', 'Dr. Hanan Abdel-Khaleq'],
+        'English Language (2)': ['Dr. Samir Marie', 'Dr. Mohamed Zaeer', 'Dr. Walaa Nabil'],
+        'Management Information Systems': ['Dr. Heba Mostafa', 'Dr. Samar El-Tanbouly'],
+
         'Corporate Accounting': ['Dr. Mohamed Hassan', 'Dr. Ahmed Nour', 'Dr. Sara Khalil'],
         'Principles of Cost Accounting': ['Dr. Tarek Mahmoud', 'Dr. Mohamed Hassan', 'Dr. Laila Mansour'],
         'Specialized Accounting Systems': ['Dr. Ahmed Nour', 'Dr. Khaled Ibrahim', 'Dr. Mona Reda'],
@@ -423,15 +431,12 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderInstructorAccordion() {
         if (!instructorSubjectsList) return;
         const dept = deptInput ? deptInput.value : currentDept;
-        if (instructorDeptTag) instructorDeptTag.textContent = dept;
+        if (instructorDeptTag) instructorDeptTag.textContent = '2nd Year';
 
-        const deptKey = getDeptKey(dept);
-        let materials = [];
-        if (typeof MATERIALS !== 'undefined' && MATERIALS[deptKey]) {
-            materials = MATERIALS[deptKey];
-        } else {
-            const names = sampleSubjectsByDept[dept] || sampleSubjectsByDept['Accounting'] || [];
-            materials = names.map((name, idx) => ({ id: `sub_${idx}`, title: name, icon: '📘' }));
+        let materials = Array.isArray(MATERIALS) ? MATERIALS : (typeof MATERIALS !== 'undefined' && MATERIALS['general'] ? MATERIALS['general'] : []);
+        if (!materials || !materials.length) {
+            const names = sampleSubjectsByDept['2nd Year'] || [];
+            materials = names.map((name, idx) => ({ id: `s${idx+1}`, title: name, icon: '📘' }));
         }
 
         let savedPrefs = {};
@@ -772,12 +777,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const scheduleOut = document.getElementById('schedule-output');
     const scheduleBuilderContainer = document.getElementById('schedule-builder-container');
 
+    const yearSubjects = [
+        'Intermediate Accounting (1)',
+        'Descriptive Statistics',
+        'Public Finance (1)',
+        'Production Management',
+        'Macroeconomic Theory',
+        'English Language (2)',
+        'Management Information Systems'
+    ];
+
     const sampleSubjectsByDept = {
-        'Accounting': ['Financial Accounting III', 'Cost & Management Accounting', 'Auditing & Control', 'Tax Accounting', 'Business Law'],
-        'Business Administration': ['Strategic Management', 'Marketing Analytics', 'Operations Research', 'HR Management', 'Corporate Finance'],
-        'Economics': ['Macroeconomics Analysis', 'International Trade', 'Public Finance', 'Econometrics', 'Monetary Policy'],
-        'Statistics': ['Applied Linear Models', 'Probability Theory II', 'Statistical Computing', 'Demography', 'Sample Survey Design'],
-        'Financial & Customs Studies': ['Customs Valuation', 'International Logistics', 'Financial Markets', 'Tariff Systems', 'Trade Finance']
+        '2nd Year': yearSubjects,
+        'Accounting': yearSubjects,
+        'Business Administration': yearSubjects,
+        'Economics': yearSubjects,
+        'Statistics': yearSubjects,
+        'Financial & Customs Studies': yearSubjects
     };
 
     function getDefaultScheduleConfig() {

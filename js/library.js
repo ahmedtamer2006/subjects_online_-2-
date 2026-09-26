@@ -35,6 +35,18 @@
         bindModals();
         renderLibrary();
         checkStorage();
+
+        // Cross-tab and dynamic synchronization
+        window.addEventListener('so-lib-changed', () => {
+            renderLibrary();
+            checkStorage();
+        });
+        window.addEventListener('storage', (e) => {
+            if (e.key === 'so_offline_library' || e.key === 'so_offline_folders') {
+                renderLibrary();
+                checkStorage();
+            }
+        });
     }
 
     // ── Helper: Data Access ──
@@ -44,6 +56,7 @@
 
     function saveLibraryData(lib) {
         localStorage.setItem('so_offline_library', JSON.stringify(lib));
+        window.dispatchEvent(new CustomEvent('so-lib-changed', { detail: lib }));
     }
 
     function getFoldersData() {

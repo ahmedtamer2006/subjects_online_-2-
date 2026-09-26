@@ -14,11 +14,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const THEME_ACCENT = '#ec4899';
     const THEME_GLOW = '#fbcfe8';
 
-    // Find subject across all departments
+    // Find subject
     let subject = null;
-    for (const dept in MATERIALS) {
-        const found = MATERIALS[dept].find(m => m.id === subjectId);
-        if (found) { subject = found; break; }
+    if (Array.isArray(MATERIALS)) {
+        subject = MATERIALS.find(m => m.id === subjectId) || MATERIALS[0];
+    } else {
+        for (const dept in MATERIALS) {
+            if (Array.isArray(MATERIALS[dept])) {
+                const found = MATERIALS[dept].find(m => m.id === subjectId);
+                if (found) { subject = found; break; }
+            }
+        }
     }
 
     if (!subject) {
@@ -189,6 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.title = "Remove from Library";
         }
         localStorage.setItem('so_offline_library', JSON.stringify(offlineLib));
+        window.dispatchEvent(new CustomEvent('so-lib-changed', { detail: offlineLib }));
     };
 
     // ── Sidebar Progress Update ───────────────────────────

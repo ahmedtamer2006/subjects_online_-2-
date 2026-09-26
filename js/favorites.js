@@ -13,10 +13,14 @@
         initFavoritesPage();
     });
 
+    let previousFavsSnapshot = null;
+
     function getFullCatalog() {
-        const allMaterials = Object.values(MATERIALS).flat();
+        const allMaterials = Array.isArray(MATERIALS) ? MATERIALS : Object.values(MATERIALS).flat();
         // Tag materials with type
-        const mats = allMaterials.map(m => ({ ...m, itemType: 'material' }));
+        const mats = allMaterials
+            .filter(m => m && m.id && m.title)
+            .map(m => ({ ...m, itemType: 'material' }));
         const essays = (typeof ESSAYS !== 'undefined' ? ESSAYS : []).map(e => ({ ...e, itemType: 'essay' }));
         return [...mats, ...essays];
     }
@@ -24,6 +28,19 @@
     function initFavoritesPage() {
         renderFavorites();
         bindControls();
+
+        // Cross-tab and dynamic synchronization
+        window.addEventListener('so-fav-changed', () => {
+            renderFavorites();
+        });
+        window.addEventListener('so-pin-changed', () => {
+            renderFavorites();
+        });
+        window.addEventListener('storage', (e) => {
+            if (e.key === 'soFavorites' || e.key === 'soPinned') {
+                renderFavorites();
+            }
+        });
     }
 
     function renderFavorites() {
@@ -262,6 +279,8 @@
         if (confirmBtn && modal) {
             confirmBtn.addEventListener('click', () => {
                 modal.classList.remove('open');
+                previousFavsSnapshot = getFavorites();
+                lastRemovedItem = null;
                 saveFavorites([]);
                 showToast('All favorites cleared');
                 renderFavorites();
@@ -272,7 +291,12 @@
         const undoBtn = document.getElementById('fav-toast-undo');
         if (undoBtn) {
             undoBtn.addEventListener('click', () => {
-                if (lastRemovedItem) {
+                if (previousFavsSnapshot) {
+                    saveFavorites(previousFavsSnapshot);
+                    previousFavsSnapshot = null;
+                    hideToast();
+                    renderFavorites();
+                } else if (lastRemovedItem) {
                     let favs = getFavorites();
                     if (!favs.includes(lastRemovedItem.id)) {
                         favs.push(lastRemovedItem.id);
@@ -350,10 +374,10 @@
         const container = document.getElementById('fav-suggestions-grid');
         if (!container) return;
 
-        const allMaterials = Object.values(MATERIALS).flat();
+        const allMaterials = Array.isArray(MATERIALS) ? MATERIALS : Object.values(MATERIALS).flat();
         const suggestions = [
-            allMaterials[0] || { id: 'a1', title: 'Corporate Accounting', icon: '📊', accent: '#2563eb' },
-            allMaterials[1] || { id: 'a2', title: 'Principles of Cost Accounting', icon: '🧮', accent: '#7c3aed' },
+            allMaterials[0] || { id: 's1', title: 'Intermediate Accounting (1)', icon: '🧮', accent: '#2563eb' },
+            allMaterials[1] || { id: 's2', title: 'Descriptive Statistics', icon: '📊', accent: '#7c3aed' },
             (typeof ESSAYS !== 'undefined' && ESSAYS[0]) ? { ...ESSAYS[0], itemType: 'essay' } : { id: 'es1', title: 'Digital Transformation', doctor: 'Dr. Mohamed Hassan', itemType: 'essay' }
         ];
 
