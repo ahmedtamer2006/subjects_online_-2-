@@ -16,15 +16,15 @@ const MATERIALS = [
                 {
                     num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Week 1: ", lectures: [] },
-                        { num: 2, title: "Week 2: ", lectures: [] },
-                        { num: 3, title: "Week 3: ", lectures: [] }
+                        { num: 1, title: " ", lectures: [] },
+                        { num: 2, title: " ", lectures: [] },
+                        { num: 3, title: " ", lectures: [] }
                     ]
                 },
                 {
                     num: 2, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Week 4: ", lectures: [] },
+                        { num: 1, title: " ", lectures: [] },
                         { num: 2, title: "Week 5: ", lectures: [] }
                     ]
                 }
@@ -85,17 +85,23 @@ const MATERIALS = [
         content: {
             chapters: [
                 {
-                    num: 1, title: "", time: "",
+                    num: 1, title: "Ch1", time: "",
                     weeks: [
-                        { num: 1, title: "", lectures: [] },
-                        { num: 2, title: "", lectures: [] },
-                        { num: 3, title: "", lectures: [] }
+                        {
+                            num: 1, title: "", lectures: [
+                            // { id: 201, title: "", type: "pdf", url: "" },
+                            { id: 202, title: "Lect1", type: "video", url:"materials/Videos/Stat/Lect1_(Dr.Mona).mp4" }
+
+                            ]
+                        },
+                        // { num: 2, title: "", lectures: [] },
+                        // { num: 3, title: "", lectures: [] }
                     ]
                 },
                 // {
                 //     num: 2, title: "Descriptive Statistics — Dispersion & Probability", time: "2h 45m",
                 //     weeks: [
-                //         { num: 1, title: "Week 4: Dispersion, Variance & Standard Deviation", lectures: [] },
+                //         { num: 1, title: " Dispersion, Variance & Standard Deviation", lectures: [] },
                 //         { num: 2, title: "Week 5: Correlation & Regression Basics", lectures: [] }
                 //     ]
                 // }
@@ -156,17 +162,21 @@ const MATERIALS = [
         content: {
             chapters: [
                 {
-                    num: 1, title: "", time: "",
+                    num: 1, title: "Ch1", time: "",
                     weeks: [
-                        { num: 1, title: "Week 1:", lectures: [] },
-                        { num: 2, title: "Week 2: ", lectures: [] },
-                        { num: 3, title: "Week 3: ", lectures: [] }
+                        {
+                            num: 1, title: "Lect 1", lectures: [
+                                // { id: 301, title: "Lect1(Dr.Saeed)'Handwriting'", type: "pdf", url: "materials/Pdfs/Business/First_Term/Chapter_1/week1/CA_lect_1_(Dr.Saeed)_'handwriting'.pdf" },
+                                { id: 302, title: "Lect 1 (Dr.Ahmed Saeed)", type: "video", url: "materials/Videos/Public finance/Lect1_(Dr.Ahmed Saeed).mp4" }
+                                ] },
+                        // { num: 2, title: " ", lectures: [] },
+                        // { num: 3, title: " ", lectures: [] }
                     ]
                 },
                 // {
                 //     num: 2, title: "Public Finance — Public Revenues & Budget", time: "2h 45m",
                 //     weeks: [
-                //         { num: 1, title: "Week 4: Taxes, Fees & Sovereign Revenues", lectures: [] },
+                //         { num: 1, title: " Taxes, Fees & Sovereign Revenues", lectures: [] },
                 //         { num: 2, title: "Week 5: General State Budget & Fiscal Balance", lectures: [] }
                 //     ]
                 // }
@@ -230,14 +240,14 @@ const MATERIALS = [
                     num: 1, title: "", time: "",
                     weeks: [
                         { num: 1, title: "", lectures: [] },
-                        { num: 2, title: "Week 2:", lectures: [] },
-                        { num: 3, title: "Week 3: ", lectures: [] }
+                        { num: 2, title: "", lectures: [] },
+                        { num: 3, title: " ", lectures: [] }
                     ]
                 },
                 {
                     num: 2, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Week 4: ", lectures: [] },
+                        { num: 1, title: " ", lectures: [] },
                         { num: 2, title: "Week 5: ", lectures: [] }
                     ]
                 }
@@ -300,15 +310,15 @@ const MATERIALS = [
                 {
                     num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Week 1:", lectures: [] },
-                        { num: 2, title: "Week 2: ", lectures: [] },
-                        { num: 3, title: "Week 3: ", lectures: [] }
+                        { num: 1, title: "", lectures: [] },
+                        { num: 2, title: " ", lectures: [] },
+                        { num: 3, title: " ", lectures: [] }
                     ]
                 },
                 {
                     num: 2, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Week 4: ", lectures: [] },
+                        { num: 1, title: " ", lectures: [] },
                         { num: 2, title: "Week 5: ", lectures: [] }
                     ]
                 }
@@ -371,15 +381,15 @@ const MATERIALS = [
                 {
                     num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "Week 1:", lectures: [] },
-                        { num: 2, title: "Week 2:", lectures: [] },
-                        { num: 3, title: "Week 3:", lectures: [] }
+                        { num: 1, title: "", lectures: [] },
+                        { num: 2, title: "", lectures: [] },
+                        { num: 3, title: "", lectures: [] }
                     ]
                 },
                 // {
                 //     num: 2, title: "Business English — Translation & Communication", time: "2h 15m",
                 //     weeks: [
-                //         { num: 1, title: "Week 4: Economic Translation Techniques", lectures: [] },
+                //         { num: 1, title: " Economic Translation Techniques", lectures: [] },
                 //         { num: 2, title: "Week 5: Business Correspondence & Reports", lectures: [] }
                 //     ]
                 // }
@@ -450,7 +460,7 @@ const MATERIALS = [
                 // {
                 //     num: 2, title: "", time: "",
                 //     weeks: [
-                //         { num: 1, title: "Week 4: Enterprise Applications & E-Commerce", lectures: [] },
+                //         { num: 1, title: " Enterprise Applications & E-Commerce", lectures: [] },
                 //         { num: 2, title: "Week 5: Decision Support Systems & Business Intelligence", lectures: [] }
                 //     ]
                 // }
