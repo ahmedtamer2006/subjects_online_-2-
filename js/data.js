@@ -169,7 +169,11 @@ const MATERIALS = [
                                 // { id: 301, title: "Lect1(Dr.Saeed)'Handwriting'", type: "pdf", url: "materials/Pdfs/Business/First_Term/Chapter_1/week1/CA_lect_1_(Dr.Saeed)_'handwriting'.pdf" },
                                 { id: 302, title: "Lect 1 (Dr.Ahmed Saeed)", type: "video", url: "materials/Videos/Public finance/Lect1_(Dr.Ahmed Saeed).mp4" }
                                 ] },
-                        // { num: 2, title: " ", lectures: [] },
+                        {
+                            num: 2, title: " ", lectures: [
+                                { id: 303, title: "Lect 2 (Dr.Ahmed Saeed)", type: "video", url: "/materials/Videos/Public finance/Lect2(Dr.Ahmed Saeed).mp4" }
+
+                        ] },
                         // { num: 3, title: " ", lectures: [] }
                     ]
                 },
