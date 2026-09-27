@@ -85,11 +85,17 @@ const MATERIALS = [
         content: {
             chapters: [
                 {
-                    num: 1, title: "", time: "",
+                    num: 1, title: "Ch1", time: "",
                     weeks: [
-                        { num: 1, title: "", lectures: [] },
-                        { num: 2, title: "", lectures: [] },
-                        { num: 3, title: "", lectures: [] }
+                        {
+                            num: 1, title: "", lectures: [
+                            // { id: 201, title: "", type: "pdf", url: "" },
+                            { id: 202, title: "Lect1", type: "video", url:"materials/Videos/Stat/Lect1_(Dr.Mona).mp4" }
+
+                            ]
+                        },
+                        // { num: 2, title: "", lectures: [] },
+                        // { num: 3, title: "", lectures: [] }
                     ]
                 },
                 // {
