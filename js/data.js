@@ -17,7 +17,7 @@ const MATERIALS = [
                     num: 1, title: "", time: "",
                     weeks: [
                         { num: 1, title: " ", lectures: [
-                        { id: 101, title: "Quiz 1", type: "video", url: "materials/Videos/Accounting/Lect1_Dr.Zatout.mp4" },
+                        { id: 101, title: "Lect 1 Dr.Zatout", type: "video", url: "materials/Videos/Accounting/Lect1_Dr.Zatout.mp4" },
 
                         ] },
                         { num: 2, title: " ", lectures: [] },
