@@ -33,7 +33,12 @@ const MATERIALS = [
                 {
                     num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "", lectures: [] },
+                        {
+                            num: 1, title: "", lectures: [
+                                { id: 101, title: "Quiz 1", type: "pdf", url: "materials/Pdfs/First Term/Accounting/Chapter1/week1/Quiz 1 Accounting.pdf" },
+
+                            ]
+                        },
                         { num: 2, title: "", lectures: [] }
                     ]
                 }
@@ -42,7 +47,10 @@ const MATERIALS = [
                 {
                     num: 1, title: "", time: "",
                     weeks: [
-                        { num: 1, title: "", lectures: [] },
+                        {
+                            num: 1, title: "", lectures: [
+                            ]
+                        },
                         { num: 2, title: "", lectures: [] }
                     ]
                 }
@@ -89,8 +97,8 @@ const MATERIALS = [
                     weeks: [
                         {
                             num: 1, title: "", lectures: [
-                            // { id: 201, title: "", type: "pdf", url: "" },
-                            { id: 202, title: "Lect1", type: "video", url:"materials/Videos/Stat/Lect1_(Dr.Mona).mp4" }
+                                // { id: 201, title: "", type: "pdf", url: "" },
+                                { id: 202, title: "Lect1", type: "video", url: "materials/Videos/Stat/Lect1_(Dr.Mona).mp4" }
 
                             ]
                         },
@@ -168,12 +176,14 @@ const MATERIALS = [
                             num: 1, title: "", lectures: [
                                 // { id: 301, title: "Lect1(Dr.Saeed)'Handwriting'", type: "pdf", url: "materials/Pdfs/Business/First_Term/Chapter_1/week1/CA_lect_1_(Dr.Saeed)_'handwriting'.pdf" },
                                 { id: 302, title: "Lect 1 (Dr.Ahmed Saeed)", type: "video", url: "materials/Videos/Public finance/Lect1 (Dr.Ahmed Saeed).mp4" }
-                                ] },
+                            ]
+                        },
                         {
                             num: 2, title: "", lectures: [
                                 { id: 303, title: "Lect 2 (Dr.Ahmed Saeed)", type: "video", url: "materials/Videos/Public finance/Lect2(Dr.Ahmed Saeed).mp4" }
 
-                        ] },
+                            ]
+                        },
                         // { num: 3, title: " ", lectures: [] }
                     ]
                 },
@@ -519,11 +529,11 @@ const MATERIALS = [
 
 // Backward-compatibility aliases so older code accessing MATERIALS[dept] continues to work seamlessly
 MATERIALS.accounting = MATERIALS;
-MATERIALS.business   = MATERIALS;
-MATERIALS.economics  = MATERIALS;
+MATERIALS.business = MATERIALS;
+MATERIALS.economics = MATERIALS;
 MATERIALS.statistics = MATERIALS;
-MATERIALS.customs    = MATERIALS;
-MATERIALS.general    = MATERIALS;
+MATERIALS.customs = MATERIALS;
+MATERIALS.general = MATERIALS;
 
 const ESSAYS = [
     // { id: 'es1', title: 'The Impact of Digital Transformation on Commerce Education', doctor: 'Dr. Mohamed Hassan', tag: 'Technology', tagColor: '#dbeafe', tagText: '#1d4ed8', desc: 'An in-depth analysis of how digital tools are reshaping the future of business and commerce education in Egypt and globally.', readTime: '8 min read', date: 'June 2025' },
@@ -1067,7 +1077,7 @@ window.togglePdfLibrary = async function (event, btn, rawTitle, rawUrl, subjectI
                 try {
                     const cache = await caches.open('offline-materials');
                     await cache.delete(removedItem.url);
-                } catch (e) {}
+                } catch (e) { }
             }
 
             // Transform back to Plus (+) state
